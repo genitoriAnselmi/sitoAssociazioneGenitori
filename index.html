@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Associazione Genitori I.C.S. Tina Anselmi</title>
-    <!-- Chosen Palette: Warm Community -->
-    <!-- Application Structure Plan: A single-page, scrollable infographic-style application replacing the linear slide deck. The structure flows from introduction ('Chi Siamo') to activities ('Cosa Facciamo'), projects, and finally a clear call-to-action ('Partecipa Anche Tu'). This non-linear, thematic approach enhances user engagement and makes information more digestible than clicking through static slides. -->
-    <!-- Visualization & Content Choices: 'Our Purpose' (Slide 3) -> Goal: Inform -> Method: 2x2 Icon Grid -> Interaction: Hover -> Justification: Visually breaks down the mission. | 'What We Do' (Slide 4) -> Goal: Organize -> Method: Interactive Tabs -> Interaction: Click to show content -> Justification: Manages information density and encourages interaction. | 'Propose a Project' (Slide 6) -> Goal: Organize -> Method: Numbered Process Flow Diagram -> Interaction: None -> Justification: Clarifies the steps visually. CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +11,13 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FFFBF5; /* Warm Neutral Background */
+            background-color: #FFFBF5;
             color: #4A4A4A;
         }
         .text-accent { color: #D97706; }
         .bg-accent { background-color: #D97706; }
         .bg-accent-light { background-color: #FEF3C7; }
         .border-accent { border-color: #D97706; }
-        .ring-accent { ring-color: #FBBF24; }
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -46,298 +41,167 @@
             line-height: 2.5rem;
             color: #333;
         }
-         .section-subtitle {
+        .section-subtitle {
             margin-top: 1rem;
             font-size: 1.125rem;
             line-height: 1.75rem;
             color: #555;
-            max-width: 48rem; /* 768px */
-        }
-        .icon-placeholder {
-            font-size: 2.5rem;
-            line-height: 1;
+            max-width: 48rem;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
-    <header class="relative w-full py-6">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-             <img src="LOGO_O_COMITATO_GENITORI.png" alt="Logo Associazione Genitori" class="h-20 w-auto" onerror="this.style.display='none'">
-            <nav>
-                <a href="#partecipa" class="btn btn-primary">Unisciti a Noi</a>
-            </nav>
-        </div>
-    </header>
+<header class="relative w-full py-6">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+        <img src="LOGO_O_COMITATO_GENITORI.png" alt="Logo Associazione Genitori" class="h-20 w-auto" onerror="this.style.display='none'">
+        <nav>
+            <a href="#partecipa" class="btn btn-primary">Unisciti a Noi</a>
+        </nav>
+    </div>
+</header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="text-center py-20 px-6">
-            <div class="container mx-auto">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">
-                    Insieme per la scuola<br>che <span class="text-accent">sogniamo</span>
-                </h1>
-                <p class="section-subtitle mx-auto mt-6">
-                    Benvenuti all'Associazione Genitori dell'I.C.S. Tina Anselmi. Siamo un gruppo di genitori uniti per costruire un ambiente scolastico migliore, promuovendo dialogo, partecipazione e progetti concreti a beneficio dei nostri figli.
-                </p>
-            </div>
-        </section>
-
-        <!-- Mission Section -->
-        <section id="missione" class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">La Nostra Missione</h2>
-                <p class="section-subtitle mx-auto">
-                    Il nostro scopo è semplice: creare una forte alleanza tra famiglie e scuola. Crediamo che solo lavorando insieme possiamo arricchire l'esperienza formativa di ogni studente.
-                </p>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Card 1 -->
-                    <div class="p-8 bg-gray-50 rounded-lg text-left transition hover:shadow-xl hover:-translate-y-1">
-                        <div class="icon-placeholder text-accent">🤝</div>
-                        <h3 class="mt-4 text-xl font-bold text-gray-800">Promuovere Partecipazione</h3>
-                        <p class="mt-2 text-gray-600">Incoraggiamo i genitori a essere una parte attiva e propositiva della vita scolastica.</p>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="p-8 bg-gray-50 rounded-lg text-left transition hover:shadow-xl hover:-translate-y-1">
-                        <div class="icon-placeholder text-accent">🗣️</div>
-                        <h3 class="mt-4 text-xl font-bold text-gray-800">Favorire Dialogo</h3>
-                        <p class="mt-2 text-gray-600">Facciamo da ponte tra genitori, corpo docente e direzione per una comunicazione efficace.</p>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="p-8 bg-gray-50 rounded-lg text-left transition hover:shadow-xl hover:-translate-y-1">
-                        <div class="icon-placeholder text-accent">💡</div>
-                        <h3 class="mt-4 text-xl font-bold text-gray-800">Sostenere Progetti</h3>
-                        <p class="mt-2 text-gray-600">Supportiamo iniziative che migliorano l'offerta formativa e gli ambienti scolastici.</p>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="p-8 bg-gray-50 rounded-lg text-left transition hover:shadow-xl hover:-translate-y-1">
-                        <div class="icon-placeholder text-accent">❤️</div>
-                        <h3 class="mt-4 text-xl font-bold text-gray-800">Creare Comunità</h3>
-                        <p class="mt-2 text-gray-600">Costruiamo una rete di supporto reciproco tra le famiglie per sentirsi meno soli.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-	<!-- Activities Section -->
-	<section id="statuto" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">Il Nostro Statuto e l'Atto Costitutivo</h2>
-                <p class="section-subtitle mx-auto">
-                    Trasparenza e valori fondanti: consulta i documenti che regolano la nostra associazione.
-                </p>
-                <div class="mt-12">
-                    <a href="Statuto_Associazione.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        Scarica lo Statuto
-                    </a>
-                </div>
-		<div class="mt-12">
-                    <a href="Atto_costitutivo.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        Scarica l'Atto Costitutivo
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Activities Section -->
-        <section id="attivita" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="section-title">Cosa Facciamo in Pratica</h2>
-                     <p class="section-subtitle mx-auto">
-                        Le nostre azioni si concentrano su quattro aree chiave, pensate per avere un impatto diretto e positivo sulla comunità scolastica. Clicca su ogni area per scoprire i dettagli.
-                    </p>
-                </div>
-                <div class="mt-12 max-w-4xl mx-auto">
-                    <div class="flex flex-wrap justify-center gap-4 mb-8" id="tabs-container">
-                        <button class="tab-button active text-base font-semibold py-2 px-6 rounded-full" data-target="content-rappresentanza">Rappresentanza</button>
-                        <button class="tab-button text-base font-semibold py-2 px-6 rounded-full" data-target="content-eventi">Organizzazione Eventi</button>
-                        <button class="tab-button text-base font-semibold py-2 px-6 rounded-full" data-target="content-progetti">Supporto Progetti</button>
-                        <button class="tab-button text-base font-semibold py-2 px-6 rounded-full" data-target="content-comunicazione">Comunicazione</button>
-                    </div>
-                    <div id="tabs-content" class="bg-white p-8 rounded-lg shadow-md min-h-[12rem] flex items-center">
-                        <div class="tab-content active" id="content-rappresentanza">
-                            <h3 class="font-bold text-lg text-gray-800">La Voce dei Genitori</h3>
-                            <p class="mt-2 text-gray-600">Agiamo come portavoce per le esigenze e le proposte delle famiglie presso il consiglio d'istituto e le altre sedi istituzionali, assicurando che la prospettiva dei genitori sia sempre ascoltata e considerata.</p>
-                        </div>
-                        <div class="tab-content" id="content-eventi" style="display: none;">
-                            <h3 class="font-bold text-lg text-gray-800">Momenti di Incontro e Crescita</h3>
-                            <p class="mt-2 text-gray-600">Ideiamo e realizziamo eventi che uniscono la comunità: feste scolastiche, laboratori creativi per bambini e ragazzi, e incontri formativi per genitori su tematiche educative di attualità.</p>
-                        </div>
-                        <div class="tab-content" id="content-progetti" style="display: none;">
-                            <h3 class="font-bold text-lg text-gray-800">Risorse per le Idee Migliori</h3>
-                            <p class="mt-2 text-gray-600">Raccogliamo fondi e forniamo supporto logistico per realizzare progetti proposti da genitori e insegnanti, come il potenziamento delle aule informatiche, l'acquisto di materiale didattico o la riqualificazione degli spazi esterni.</p>
-                        </div>
-                        <div class="tab-content" id="content-comunicazione" style="display: none;">
-                             <h3 class="font-bold text-lg text-gray-800">Informazioni Chiare e Puntuali</h3>
-                            <p class="mt-2 text-gray-600">Utilizziamo i nostri canali (sito, social, newsletter) per tenere tutti i genitori costantemente aggiornati sulle iniziative dell'associazione, le novità della scuola e le opportunità di partecipazione.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="progetti" class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">I Nostri Progetti Recenti</h2>
-                <p class="section-subtitle mx-auto">Ecco alcuni esempi di come le nostre iniziative si sono trasformate in risultati concreti per la scuola.</p>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Card 1 -->
-                    <div class="bg-accent-light rounded-lg p-6 text-left">
-                        <h3 class="font-bold text-xl text-gray-800">Iniziativa Diario Scolastico 2025/2026</h3>
-                        <p class="mt-2 text-gray-700">Abbiamo contribuito alla ricerca di sponsor che potessero finanziare il progetto, garantendo così la possibilità a tutti gli studenti delle scuole primarie e secondarie di primo grado di avere nuovamente un Diario che sia inclusivo, senza dover gravare sulle famiglie.</p>
-                    </div>
-                    <!-- Project Card 2 -->
-                    <div class="bg-accent-light rounded-lg p-6 text-left">
-                        <h3 class="font-bold text-xl text-gray-800">Aule Green</h3>
-                        <p class="mt-2 text-gray-700">Siamo alla ricerca di genitori disponibili che abbiano voglia di sporcarsi le mani e fare un lavoro di manutenzione all'Aula Green presente tra i plessi De Amicis e Giuliani. Inoltre stiamo collaborando finanziariamente, sempre attraverso sponsorizzazioni, alla realizzazione di un'altra Aula Green nel plesso Manin.</p>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="bg-accent-light rounded-lg p-6 text-left">
-                        <h3 class="font-bold text-xl text-gray-800">Dona il tuoi Libri Scolastici</h3>
-                        <p class="mt-2 text-gray-700">Questo progetto è rivolto a tutte le classi terze delle due scuole secondarie di primo grado (Giuliani e Gandhi). A causa dell'aumento considerevole del prezzo dei testi scolastici, già dall'anno educativo 2025-2026 alcuni libri non verranno più adottati (Storia dell'Arte e Musica) e quindi si è creata la necessità di recuperarli attraverso la donazione da parte degli studenti uscenti. I volumi verranno poi visionati e sistemati da un'apposita commissione di genitori, che li renderà nuovamente fruibili per i nuovi studenti che verranno accolti nelle classi prime. Un bel progetto di green re-cycle e di inclusione. L'obiettivo nel lungo periodo sarà quello di poter utilizzare questo metodo per tutti i testi adottati.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Participation Section -->
-        <section id="partecipa" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">Partecipa Anche Tu</h2>
-                <p class="section-subtitle mx-auto">La forza della nostra associazione è nel contributo di ciascuno. Che tu abbia un'ora o un'idea, il tuo aiuto è prezioso. Scopri come puoi fare la differenza.</p>
-
-                <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div class="text-left bg-white p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold text-gray-800">Hai un'Idea? Proponi un Progetto!</h3>
-                        <p class="mt-3 text-gray-600">Se hai un'idea per migliorare la scuola, segui questi semplici passi per sottoporla al consiglio direttivo.</p>
-                        <div class="mt-6 space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">1</div>
-                                <div class="ml-4">
-                                    <h4 class="font-semibold text-gray-700">Compila il Modulo</h4>
-                                    <p class="text-gray-600 text-sm">Descrivi la tua idea, gli obiettivi e le risorse necessarie.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">2</div>
-                                <div class="ml-4">
-                                    <h4 class="font-semibold text-gray-700">Invia la Proposta</h4>
-                                    <p class="text-gray-600 text-sm">Manda il modulo compilato al nostro indirizzo email.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">3</div>
-                                <div class="ml-4">
-                                    <h4 class="font-semibold text-gray-700">Valutazione</h4>
-                                    <p class="text-gray-600 text-sm">Il consiglio valuterà la fattibilità e i benefici della proposta.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">4</div>
-                                <div class="ml-4">
-                                    <h4 class="font-semibold text-gray-700">Realizzazione</h4>
-                                    <p class="text-gray-600 text-sm">Se approvato, collaboreremo per trasformare l'idea in realtà.</p>
-                                </div>
-                            </div>
-                        </div>
-                         <p class="mt-6 text-sm text-gray-500">Puoi compilare il <a href="Modulo_contributo_economico.pdf" class="text-accent underline hover:no-underline" target="_blank" rel="noopener noreferrer">modulo</a> e poi inviarcelo via email all'indirizzo genitori.icsanselmi@gmail.com.</p>
-                    </div>
-
-                    <div class="text-left space-y-8">
-                        <div class="bg-white p-8 rounded-lg shadow-lg">
-                             <h3 class="text-2xl font-bold text-gray-800">Unisciti a Noi</h3>
-                            <p class="mt-3 text-gray-600">Scegli la modalità di partecipazione che preferisci. Ogni gesto conta!</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <h4 class="font-bold text-xl text-gray-800">Diventa Socio</h4>
-                            <p class="mt-2 text-gray-600">Iscrivendoti all'associazione sosterrai formalmente le nostre attività e avrai diritto di voto in assemblea. Contattaci per i dettagli!</p>
-                        </div>
-                         <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <h4 class="font-bold text-xl text-gray-800">Offri il tuo Tempo</h4>
-                            <p class="mt-2 text-gray-600">Anche un piccolo aiuto è fondamentale: per organizzare un evento, distribuire volantini o dare una mano durante un laboratorio. Fatti avanti!</p>
-                        </div>
-                        </div>
-
-                    <div class="bg-white p-6 rounded-lg shadow-lg lg:col-span-2">
-                        <h4 class="font-bold text-xl text-gray-800">Iscrizione Online e Pagamento</h4>
-                        <p class="mt-2 text-gray-600">Puoi iscriverti all'associazione e versare la quota associativa annuale direttamente online con paypal al contatto genitori.icsanselmi@gmail.com. </br> O se preferisci facendo un bonifico al nostro conto corrente IT71E0890436080064000001519 - causale: quota associativa [nome e cognome associato].</p>
-                        <div class="mt-4 flex flex-col space-y-3">
-                            <a href="https://forms.gle/LzdHqfEL5gkgfbF88" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                                Modulo di Iscrizione Online
-                            </a>
-                            <a href="https://www.paypal.com/it/home" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                                Paga con PayPal
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold">Restiamo in Contatto</h2>
-            <p class="mt-4 max-w-2xl mx-auto">Per domande, proposte o semplicemente per salutarci, questi sono i nostri recapiti.
-Ti aspettiamo!</p>
-            <div class="mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-                <p><strong>Email:</strong> <a href="mailto:genitori.icsanselmi@gmail.com" class="hover:text-accent">
-  genitori.icsanselmi@gmail.com
-</a></p>
-                <p><strong>Social:</strong> 
-                <a href="https://www.facebook.com/profile.php?id=61578684118153" class="hover:text-accent">Facebook</a> | 
-                <a href="https://www.instagram.com/genitori.icsanselmi/" class="hover:text-accent">Instagram</a>
+<main>
+    <!-- Hero Section -->
+    <section class="text-center py-20 px-6">
+        <div class="container mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">
+                Insieme per la scuola<br>che <span class="text-accent">sogniamo</span>
+            </h1>
+            <p class="section-subtitle mx-auto mt-6">
+                Benvenuti all'Associazione Genitori dell'I.C.S. Tina Anselmi...
             </p>
-
-            </div>
-            <p class="mt-10 text-sm text-gray-400">&copy; 2025 Associazione Genitori I.C.S. Tina Anselmi - Dolo</p>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        const tabsContainer = document.getElementById('tabs-container');
-        const tabsContent = document.getElementById('tabs-content');
+    <!-- Mission Section -->
+    <section id="missione" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title">La Nostra Missione</h2>
+            <p class="section-subtitle mx-auto">Il nostro scopo è semplice...</p>
+            <!-- CARDS -->
+        </div>
+    </section>
 
-        if (tabsContainer) {
-            const tabButtons = tabsContainer.querySelectorAll('.tab-button');
-            const contentPanes = tabsContent.querySelectorAll('.tab-content');
+    <!-- Statuto Section -->
+    <section id="statuto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title">Il Nostro Statuto e l'Atto Costitutivo</h2>
+            <a href="Statuto_Associazione.pdf" class="btn btn-primary mt-6" target="_blank">Scarica lo Statuto</a>
+            <a href="Atto_costitutivo.pdf" class="btn btn-primary mt-6" target="_blank">Scarica l'Atto Costitutivo</a>
+        </div>
+    </section>
 
-            tabsContainer.addEventListener('click', (event) => {
-                const clickedButton = event.target.closest('.tab-button');
-                if (!clickedButton) return;
+    <!-- Attività Section -->
+    <section id="attivita" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center">Cosa Facciamo in Pratica</h2>
+            <!-- Tabs e contenuti -->
+        </div>
+    </section>
 
-                // Update button styles
-                tabButtons.forEach(button => {
-                    button.classList.remove('active', 'bg-accent', 'text-white');
-                    button.classList.add('text-gray-600', 'bg-gray-100');
-                });
-                clickedButton.classList.add('active', 'bg-accent', 'text-white');
-                clickedButton.classList.remove('text-gray-600', 'bg-gray-100');
+    <!-- Progetti Recenti -->
+    <section id="progetti" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title">I Nostri Progetti Recenti</h2>
+            <!-- cards -->
+        </div>
+    </section>
 
-                // Update content visibility
-                const targetId = clickedButton.dataset.target;
-                contentPanes.forEach(pane => {
-                    if (pane.id === targetId) {
-                        pane.style.display = 'block';
-                    } else {
-                        pane.style.display = 'none';
-                    }
-                });
-            });
-            
-            // Initial style setup
-            tabButtons.forEach(button => {
-                if (button.classList.contains('active')) {
-                     button.classList.add('bg-accent', 'text-white');
-                } else {
-                     button.classList.add('text-gray-600', 'bg-gray-100');
-                }
-            });
-        }
-    </script>
+    <!-- NEW: Carosello + Lightbox -->
+    <section id="galleria" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title">Progetti Realizzati ed Eventi</h2>
+            <p class="section-subtitle mx-auto">Una raccolta dei momenti più significativi.</p>
+
+            <div class="relative mt-12 overflow-hidden">
+                <button id="carousel-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-accent text-white p-3 rounded-full shadow-lg">‹</button>
+
+                <div id="carousel-track" class="flex gap-6 transition-transform duration-500">
+                    <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
+                        <img src="foto1.jpg" onclick="openLightbox(this.src)" class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
+                    </div>
+                    <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
+                        <img src="foto2.jpg" onclick="openLightbox(this.src)" class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
+                    </div>
+                    <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
+                        <img src="foto3.jpg" onclick="openLightbox(this.src)" class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
+                    </div>
+                </div>
+
+                <button id="carousel-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-accent text-white p-3 rounded-full shadow-lg">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" onclick="closeLightbox()" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+        <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-lg shadow-xl">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-4xl font-bold">×</button>
+    </div>
+
+    <!-- Progetti in Corso -->
+    <section id="progetti-in-corso" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title">Progetti in Corso</h2>
+            <p class="section-subtitle mx-auto">Le idee su cui stiamo lavorando.</p>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl text-gray-800">Progetto 1</h3>
+                    <p class="mt-2 text-gray-600">Descrizione...</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl text-gray-800">Progetto 2</h3>
+                    <p class="mt-2 text-gray-600">In lavorazione...</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl text-gray-800">Progetto 3</h3>
+                    <p class="mt-2 text-gray-600">Progetto aggiuntivo...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partecipazione -->
+    <section id="partecipa" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="section-title">Partecipa Anche Tu</h2>
+            <!-- contenuti originali -->
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-800 text-white py-12 text-center">
+    <h2 class="text-2xl font-bold">Restiamo in Contatto</h2>
+    <p class="mt-4 max-w-2xl mx-auto">Per domande o proposte...</p>
+    <p class="mt-6"><strong>Email:</strong> <a href="mailto:genitori.icsanselmi@gmail.com" class="hover:text-accent">genitori.icsanselmi@gmail.com</a></p>
+</footer>
+
+<script>
+/* Carosello */
+const track = document.getElementById("carousel-track");
+let position = 0;
+
+document.getElementById("carousel-prev").onclick = () => {
+    position += 400;
+    track.style.transform = `translateX(${position}px)`;
+};
+
+document.getElementById("carousel-next").onclick = () => {
+    position -= 400;
+    track.style.transform = `translateX(${position}px)`;
+};
+
+/* Lightbox */
+function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").classList.remove("hidden");
+}
+function closeLightbox() {
+    document.getElementById("lightbox").classList.add("hidden");
+}
+</script>
+
 </body>
 </html>
