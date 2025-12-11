@@ -390,5 +390,31 @@ Ti aspettiamo!</p>
             });
         }
     </script>
+<script>
+/* ---- CAROSELLO ---- */
+const track = document.getElementById("carousel-track");
+let position = 0;
+
+document.getElementById("carousel-prev").onclick = () => {
+    position += 400;
+    track.style.transform = `translateX(${position}px)`;
+};
+
+document.getElementById("carousel-next").onclick = () => {
+    position -= 400;
+    track.style.transform = `translateX(${position}px)`;
+};
+
+/* ---- LIGHTBOX ---- */
+function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").classList.remove("hidden");
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").classList.add("hidden");
+}
+</script>
+
 </body>
 </html>
