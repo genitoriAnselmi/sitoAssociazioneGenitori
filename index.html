@@ -171,6 +171,63 @@
                 </div>
             </div>
         </section>
+
+<!-- Completed Projects & Events - Carousel Section -->
+<section id="galleria" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6 text-center">
+      <h2 class="section-title">Progetti Realizzati ed Eventi</h2>
+      <p class="section-subtitle mx-auto">
+          Una raccolta dei momenti più significativi delle nostre attività.
+      </p>
+
+      <!-- Carousel Wrapper -->
+      <div class="relative mt-12 overflow-hidden">
+          <!-- Left Arrow -->
+          <button id="carousel-prev"
+              class="absolute left-0 top-1/2 -translate-y-1/2 bg-accent text-white p-3 rounded-full shadow-lg hover:bg-orange-700 z-10">
+              ‹
+          </button>
+
+          <!-- Images Container -->
+          <div id="carousel-track" class="flex gap-6 transition-transform duration-500">
+              <!-- Image 1 -->
+              <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
+                  <img src="foto1.jpg" onclick="openLightbox(this.src)"
+                       class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
+              </div>
+
+              <!-- Image 2 -->
+              <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
+                  <img src="foto2.jpg" onclick="openLightbox(this.src)"
+                       class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
+              </div>
+
+              <!-- Image 3 -->
+              <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
+                  <img src="foto3.jpg" onclick="openLightbox(this.src)"
+                       class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
+              </div>
+
+              <!-- Aggiungi altre foto duplicando -->
+          </div>
+
+          <!-- Right Arrow -->
+          <button id="carousel-next"
+              class="absolute right-0 top-1/2 -translate-y-1/2 bg-accent text-white p-3 rounded-full shadow-lg hover:bg-orange-700 z-10">
+              ›
+          </button>
+      </div>
+  </div>
+</section>
+
+<!-- Lightbox Fullscreen -->
+<div id="lightbox" onclick="closeLightbox()"
+     class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-lg shadow-xl">
+    <button onclick="closeLightbox()"
+        class="absolute top-6 right-6 text-white text-4xl font-bold">×</button>
+</div>
+
         
         <!-- Projects Section -->
         <section id="progetti" class="py-20 bg-white">
