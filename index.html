@@ -180,43 +180,43 @@
           Una raccolta dei momenti più significativi delle nostre attività.
       </p>
 
-      <!-- Carousel Wrapper -->
-      <div class="relative mt-12 overflow-hidden">
-          <!-- Left Arrow -->
-          <button id="carousel-prev"
-              class="absolute left-0 top-1/2 -translate-y-1/2 bg-accent text-white p-3 rounded-full shadow-lg hover:bg-orange-700 z-10">
-              ‹
-          </button>
+      <!-- Carosello Progetti -->
+<div class="relative w-full overflow-hidden">
+<!-- Freccia sinistra -->
+<button id="prev-btn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-10 cursor-pointer">&#10094;</button>
 
-          <!-- Images Container -->
-          <div id="carousel-track" class="flex gap-6 transition-transform duration-500">
-              <!-- Image 1 -->
-              <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
-                  <img src="Diario1.jpg" onclick="openLightbox(this.src)"
-                       class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
-              </div>
 
-              <!-- Image 2 -->
-              <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
-                  <img src="Diario2.jpg" onclick="openLightbox(this.src)"
-                       class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
-              </div>
+<!-- Track -->
+<div id="projects-track" class="flex transition-transform duration-500">
 
-              <!-- Image 3 -->
-              <div class="min-w-[300px] md:min-w-[400px] lg:min-w-[500px] cursor-pointer">
-                  <img src="Diario3.jpg" onclick="openLightbox(this.src)"
-                       class="w-full h-72 object-cover rounded-xl shadow-lg hover:scale-105 transition">
-              </div>
 
-              <!-- Aggiungi altre foto duplicando -->
-          </div>
+<!-- Progetto 1 -->
+<div class="min-w-full flex flex-col md:flex-row items-center gap-6 p-6">
+<div class="md:w-1/2">
+<h2 class="text-2xl font-bold mb-2">Progetto 1</h2>
+<p class="text-gray-700">Descrizione breve del progetto 1. Qui puoi inserire dettagli, obiettivi, strumenti utilizzati e risultati.</p>
+</div>
+<div class="md:w-1/2 flex gap-4">
+<img src="Diario1.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
+<img src="Diario2.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
+</div>
+</div>
 
-          <!-- Right Arrow -->
-          <button id="carousel-next"
-              class="absolute right-0 top-1/2 -translate-y-1/2 bg-accent text-white p-3 rounded-full shadow-lg hover:bg-orange-700 z-10">
-              ›
-          </button>
-      </div>
+
+<!-- Progetto 2 -->
+<div class="min-w-full flex flex-col md:flex-row items-center gap-6 p-6">
+<div class="md:w-1/2">
+<h2 class="text-2xl font-bold mb-2">Progetto 2</h2>
+<p class="text-gray-700">Descrizione breve del progetto 2. Anche qui puoi inserire informazioni utili e immagini relative.</p>
+</div>
+<div class="md:w-1/2 flex gap-4">
+<img src="Diario3.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
+<img src="Diario1.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
+</div>
+</div>
+
+
+</div>
   </div>
 </section>
 
