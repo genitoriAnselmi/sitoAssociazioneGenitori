@@ -172,60 +172,99 @@
             </div>
         </section>
 
-<!-- Completed Projects & Events - Carousel Section -->
-<section id="galleria" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6 text-center">
-      <h2 class="section-title">Progetti Realizzati ed Eventi</h2>
-      <p class="section-subtitle mx-auto">
-          Una raccolta dei momenti più significativi delle nostre attività.
-      </p>
-
-      <!-- Carosello Progetti -->
-<div class="relative w-full overflow-hidden">
-<!-- Freccia sinistra -->
-<button id="prev-btn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-10 cursor-pointer">&#10094;</button>
+<!-- Carosello + Lightbox Avanzata -->
 
 
-<!-- Track -->
-<div id="projects-track" class="flex transition-transform duration-500">
-
-
+<div class="relative w-full overflow-hidden p-6">
+<div id="carousel-track" class="flex gap-6 transition-transform duration-500">
 <!-- Progetto 1 -->
-<div class="min-w-full flex flex-col md:flex-row items-center gap-6 p-6">
-<div class="md:w-1/2">
-<h2 class="text-2xl font-bold mb-2">Progetto 1</h2>
-<p class="text-gray-700">Descrizione breve del progetto 1. Qui puoi inserire dettagli, obiettivi, strumenti utilizzati e risultati.</p>
+<div class="flex min-w-full gap-6 items-center">
+<div class="w-1/2">
+<h2 class="text-2xl font-bold mb-3">Progetto 1</h2>
+<p class="text-gray-700">Descrizione del progetto numero uno con testo esplicativo.</p>
 </div>
-<div class="md:w-1/2 flex gap-4">
-<img src="Diario1.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
-<img src="Diario2.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
+<div class="w-1/2 flex gap-4">
+<img src="Diario1.jpg" onclick="openLightbox(this.src, project1Images)" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer">
+<img src="Diario2.jpg" onclick="openLightbox(this.src, project1Images)" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer">
 </div>
 </div>
 
 
 <!-- Progetto 2 -->
-<div class="min-w-full flex flex-col md:flex-row items-center gap-6 p-6">
-<div class="md:w-1/2">
-<h2 class="text-2xl font-bold mb-2">Progetto 2</h2>
-<p class="text-gray-700">Descrizione breve del progetto 2. Anche qui puoi inserire informazioni utili e immagini relative.</p>
+<div class="flex min-w-full gap-6 items-center">
+<div class="w-1/2">
+<h2 class="text-2xl font-bold mb-3">Progetto 2</h2>
+<p class="text-gray-700">Descrizione del progetto numero due con dettagli e info.</p>
 </div>
-<div class="md:w-1/2 flex gap-4">
-<img src="Diario3.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
-<img src="Diario1.jpg" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer" onclick="openLightbox(this.src)">
+<div class="w-1/2 flex gap-4">
+<img src="Diario3.jpg" onclick="openLightbox(this.src, project2Images)" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer">
+<img src="Diario4.jpg" onclick="openLightbox(this.src, project2Images)" class="w-1/2 h-64 object-cover rounded-xl shadow-lg cursor-pointer">
 </div>
 </div>
 
 
 </div>
-  </div>
-</section>
 
-<!-- Lightbox Fullscreen -->
-<div id="lightbox" onclick="closeLightbox()"
-     class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-    <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-lg shadow-xl">
-    <button onclick="closeLightbox()"
-        class="absolute top-6 right-6 text-white text-4xl font-bold">×</button>
+
+<!-- Frecce carosello -->
+<button onclick="prevProject()" class="absolute left-4 top-1/2 -translate-y-1/2 text-4xl text-gray-700">❮</button>
+<button onclick="nextProject()" class="absolute right-4 top-1/2 -translate-y-1/2 text-4xl text-gray-700">❯</button>
+</div>
+
+
+<script>
+let projectIndex = 0;
+function updateCarousel() {
+const track = document.getElementById('carousel-track');
+track.style.transform = `translateX(-${projectIndex * 100}%)`;
+}
+function nextProject() {
+projectIndex = Math.min(projectIndex + 1, 1);
+updateCarousel();
+}
+function prevProject() {
+projectIndex = Math.max(projectIndex - 1, 0);
+updateCarousel();
+}
+
+
+const project1Images = ["Diario1.jpg", "Diario2.jpg"];
+const project2Images = ["Diario3.jpg", "Diario4.jpg"];
+</script>
+
+
+<!-- LIGHTBOX AVANZATA -->
+<style>
+#lightbox-overlay {
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.85);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; }}
+#lightbox-container { position: relative; max-width: 90%; max-height: 90%; }
+#lightbox-image { width: 100%; border-radius: 16px; }
+#lightbox-close { position: absolute; top: -40px; right: 0; color: white; font-size: 32px; cursor: pointer; }
+.lightbox-arrow { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 48px; cursor: pointer; }
+#lightbox-prev { left: -60px; }
+#lightbox-next { right: -60px; }
+#lightbox-thumbnails { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+#lightbox-thumbnails img { width: 80px; height: 50px; opacity: 0.6; border-radius: 8px; cursor: pointer; }
+</style>
+
+
+<div id="lightbox-overlay" onclick="closeLightbox(event)">
+<div id="lightbox-container">
+<span id="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+<span id="lightbox-prev" class="lightbox-arrow" onclick="prevImage(event)">&#10094;</span>
+<img id="lightbox-image">
+<span id="lightbox-next" class="lightbox-arrow" onclick="nextImage(event)">&#10095;</span>
+<div id="lightbox-thumbnails"></div>
+</div>
 </div>
 
         
@@ -350,70 +389,51 @@ Ti aspettiamo!</p>
     </footer>
 
     <script>
-        const tabsContainer = document.getElementById('tabs-container');
-        const tabsContent = document.getElementById('tabs-content');
+let lightboxImages = [];
+let currentIndex = 0;
 
-        if (tabsContainer) {
-            const tabButtons = tabsContainer.querySelectorAll('.tab-button');
-            const contentPanes = tabsContent.querySelectorAll('.tab-content');
 
-            tabsContainer.addEventListener('click', (event) => {
-                const clickedButton = event.target.closest('.tab-button');
-                if (!clickedButton) return;
-
-                // Update button styles
-                tabButtons.forEach(button => {
-                    button.classList.remove('active', 'bg-accent', 'text-white');
-                    button.classList.add('text-gray-600', 'bg-gray-100');
-                });
-                clickedButton.classList.add('active', 'bg-accent', 'text-white');
-                clickedButton.classList.remove('text-gray-600', 'bg-gray-100');
-
-                // Update content visibility
-                const targetId = clickedButton.dataset.target;
-                contentPanes.forEach(pane => {
-                    if (pane.id === targetId) {
-                        pane.style.display = 'block';
-                    } else {
-                        pane.style.display = 'none';
-                    }
-                });
-            });
-            
-            // Initial style setup
-            tabButtons.forEach(button => {
-                if (button.classList.contains('active')) {
-                     button.classList.add('bg-accent', 'text-white');
-                } else {
-                     button.classList.add('text-gray-600', 'bg-gray-100');
-                }
-            });
-        }
-    </script>
-<script>
-/* ---- CAROSELLO ---- */
-const track = document.getElementById("carousel-track");
-let position = 0;
-
-document.getElementById("carousel-prev").onclick = () => {
-    position += 400;
-    track.style.transform = `translateX(${position}px)`;
-};
-
-document.getElementById("carousel-next").onclick = () => {
-    position -= 400;
-    track.style.transform = `translateX(${position}px)`;
-};
-
-/* ---- LIGHTBOX ---- */
-function openLightbox(src) {
-    document.getElementById("lightbox-img").src = src;
-    document.getElementById("lightbox").classList.remove("hidden");
+function openLightbox(src, imagesArray) {
+lightboxImages = imagesArray;
+currentIndex = lightboxImages.indexOf(src);
+document.getElementById('lightbox-image').src = src;
+document.getElementById('lightbox-overlay').style.display = 'flex';
+generateThumbnails();
+highlightThumbnail();
 }
 
-function closeLightbox() {
-    document.getElementById("lightbox").classList.add("hidden");
+
+function closeLightbox(event) {
+if (event.target.id === 'lightbox-overlay' || event.target.id === 'lightbox-close') {
+document.getElementById('lightbox-overlay').style.display = 'none';
 }
+}
+
+
+function generateThumbnails() {
+const container = document.getElementById('lightbox-thumbnails');
+container.innerHTML = '';
+
+
+lightboxImages.forEach((img, i) => {
+const t = document.createElement('img');
+t.src = img;
+t.onclick = () => goToImage(i);
+container.appendChild(t);
+});
+}
+
+
+function highlightThumbnail() {
+const thumbs = document.querySelectorAll('#lightbox-thumbnails img');
+thumbs.forEach((t, i) => { t.style.opacity = i === currentIndex ? '1' : '0.6'; });
+}
+
+
+function nextImage(event) { event.stopPropagation(); currentIndex = (currentIndex + 1) % lightboxImages.length; updateImage(); }
+function prevImage(event) { event.stopPropagation(); currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length; updateImage(); }
+function goToImage(i) { currentIndex = i; updateImage(); }
+function updateImage() { document.getElementById('lightbox-image').src = lightboxImages[currentIndex]; highlightThumbnail(); }
 </script>
 
 </body>
