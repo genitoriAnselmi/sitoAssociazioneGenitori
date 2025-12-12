@@ -200,6 +200,77 @@
             </div>
         </section>
 
+<script>
+let lightboxImages = [];
+let currentIndex = 0;
+
+function openLightbox(src, imagesArray) {
+  lightboxImages = imagesArray;
+  currentIndex = lightboxImages.indexOf(src);
+  document.getElementById('lightbox-image').src = src;
+  document.getElementById('lightbox-overlay').style.display = 'flex';
+  generateThumbnails();
+  highlightThumbnail();
+}
+
+function closeLightbox(event) {
+  if (event.target.id === 'lightbox-overlay' || event.target.id === 'lightbox-close') {
+    document.getElementById('lightbox-overlay').style.display = 'none';
+  }
+}
+
+function generateThumbnails() {
+  const container = document.getElementById('lightbox-thumbnails');
+  container.innerHTML = '';
+
+  lightboxImages.forEach((img, i) => {
+    const t = document.createElement('img');
+    t.src = img;
+    t.onclick = () => goToImage(i);
+    container.appendChild(t);
+  });
+}
+
+function highlightThumbnail() {
+  const thumbs = document.querySelectorAll('#lightbox-thumbnails img');
+  thumbs.forEach((t, i) => {
+    t.style.opacity = i === currentIndex ? '1' : '0.6';
+  });
+}
+
+function nextImage(event) {
+  event.stopPropagation();
+  currentIndex = (currentIndex + 1) % lightboxImages.length;
+  updateImage();
+}
+
+function prevImage(event) {
+  event.stopPropagation();
+  currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
+  updateImage();
+}
+
+function goToImage(i) {
+  currentIndex = i;
+  updateImage();
+}
+
+function updateImage() {
+  document.getElementById('lightbox-image').src = lightboxImages[currentIndex];
+  highlightThumbnail();
+}
+
+// Supporto tastiera
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.getElementById('lightbox-overlay').style.display = 'none';
+  }
+  if (e.key === 'ArrowRight') nextImage(e);
+  if (e.key === 'ArrowLeft') prevImage(e);
+});
+</script>
+
+
         <!-- Participation Section -->
         <section id="partecipa" class="py-20">
             <div class="container mx-auto px-6 text-center">
